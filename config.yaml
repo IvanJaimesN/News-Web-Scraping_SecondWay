@@ -1,0 +1,14 @@
+news_sites:
+  eluniversal:
+    url: http://www.eluniversal.com.co
+    queries:
+      homepage_article_links: '.info a'
+      article_body: '.paragraph a'
+      article_title: '.sumario a'
+  elpais:
+    url: https://elpais.com
+    queries:
+      homepage_article_links: ''
+      article_body: ''
+      article_title: ''
+
