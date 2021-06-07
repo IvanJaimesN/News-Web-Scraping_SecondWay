@@ -31,11 +31,13 @@ def _news_scraper(news_site_uid):
         print('This is the host: ', host)
         print('This is the link: ', link)
 
+        print('Este es un articulo nuevo: ', article)   ################################################################################
         if article:
             logger.info('Article fetched!!')
             articles.append(article)
-            break # temporal
+            # break # temporal
 
+    print('Esta es la variable articles: ', articles)   ################################################################################
     _save_articles(news_site_uid, articles)
 
 

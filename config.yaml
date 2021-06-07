@@ -8,7 +8,18 @@ news_sites:
   elpais:
     url: https://elpais.com
     queries:
-      homepage_article_links: ''
-      article_body: ''
-      article_title: ''
-
+      homepage_article_links: '.c_h headline a'
+      article_body: '.a_b article_body a'
+      article_title: '.a_t a'
+  elespectador:
+    url: https://www.elespectador.com
+    queries:
+      homepage_article_links: 'card-link'
+      article_body: 'Article-Content a'
+      article_title: 'Article-Title a'
+  eltiempo:
+    url: https://www.eltiempo.com
+    queries:
+      homepage_article_links: '.title-container a'
+      article_body: '.contenido a'
+      article_title: '.titular a'

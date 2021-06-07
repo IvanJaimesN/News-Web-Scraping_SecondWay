@@ -10,6 +10,7 @@ class NewsPage: ## Contiene el código auxiliar
         self._config = config()['news_sites'][news_site_uid]
         self._queries = self._config['queries']
         self._html = None
+        self._url = url
 
         self._visit(url)
 
@@ -35,6 +36,7 @@ class HomePage(NewsPage): ## HomePage (hijo) contiene a NewsPage y
         for link in self._select(self._queries['homepage_article_links']):
             if link and link.has_attr('href'):
                 link_list.append(link)
+                print('LINK: ', link)   ################################################################################
 
         return set(link['href'] for link in link_list)
 
@@ -54,3 +56,6 @@ class ArticlePage(NewsPage):  ## ArticlePage extiende a NewsPage,
     def title(self):
         result = self._select(self._queries['article_title'])
         return result[0].text if len(result) else ''
+    @property
+    def url(self):
+        return self._url
